@@ -23,7 +23,7 @@ window.onload = onWindowLoad;
 
 const _formatValue = (value) => `${value}%0A%0A`;
 
-const _buildTwitterURL = (title, comment, url, hashtags) => `https://twitter.com/intent/tweet?text=${title && _formatValue(title)}${comment && _formatValue(comment)}${url && _formatValue(url)}${hashtags.replace(/#/g, '%23')}`;
+const _buildTwitterURL = (title, comment, url, hashtags) => `https://twitter.com/intent/tweet?text=${title && _formatValue(title)}${comment && _formatValue(comment)}${url && _formatValue(url)}${hashtags.replace(/#/g, '%23')}%20%23twitterSight`;
 
 document.querySelector('.form-submit').addEventListener('click', () => {
   const title = document.querySelector(".form-element__input[name='title']").value;
