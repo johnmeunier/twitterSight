@@ -28,8 +28,8 @@ const _buildTwitterURL = (title, comment, url, hashtags) => `https://twitter.com
 document.querySelector('.form-submit').addEventListener('click', () => {
   const title = document.querySelector(".form-element__input[name='title']").value;
   const comment = document.querySelector(".form-element__input[name='comment']").value;
-  const plainUrl = document.querySelector(".form-element__input[name='url']").value
-  const url = plainUrl.substring(0, plainUrl.indexOf('#'));
+  const plainUrl = document.querySelector(".form-element__input[name='url']").value;
+  const url = plainUrl.indexOf('#') != -1 ? plainUrl.substring(0, plainUrl.indexOf('#')) : plainUrl;
   const hashtags = document.querySelector(".form-element__input[name='hashtags']").value;
   window.open(_buildTwitterURL(title, comment, url, hashtags), "_blank");
 })
